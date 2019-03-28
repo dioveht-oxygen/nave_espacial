@@ -12,6 +12,8 @@ body = [
 
 bullets = [
     {x: body[0].x, y: body[1].y - 20},
+    {x: body[0].x, y: body[1].y - 160},
+    {x: body[0].x, y: body[1].y - 300},
 ];
 
 var fly = [];
@@ -77,7 +79,8 @@ spaceship = {
         for (let i= 0 ;i < this.bullet.bullets.length ; i++){
             if (action != 0){
                 fly.push(i);
-                bullets.push({x: this.bullet.bullets[i].x , y : this.bullet.bullets[i].y });
+                console.log(fly);
+                //bullets.push({x: this.bullet.bullets[i].x , y : this.bullet.bullets[i].y });
             };
             this.bullet.bullets[i].y -= 20;
             if(fly[i] != i) this.bullet.bullets[i].x = this.body[0].x;
@@ -91,7 +94,7 @@ spaceship = {
         for (let i= 0 ;i < this.bullet.bullets.length ; i++){
             if(this.bullet.bullets[i].y < 0){
                 bullets.push({
-                    x: body[0].x, y: body[1].y - 20
+                    x: body[0].x, y: body[1].y - 140 * i
                 });
                 bullets.splice(bullets,1);
             }
