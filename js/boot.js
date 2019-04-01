@@ -357,11 +357,8 @@ danger = {
     lost: function () {
         for(let i = 0 ; i < dangers.length ; i++){
             for(let j = 0 ; j < spaceship.body.length ; j++){
-                if(danger.dangers[i].x > spaceship.body[j].x || (danger.dangers[i].y + danger.dangers[i].h) < spaceship.body[j].y ){
-
-                }
-                else if ((danger.dangers[i].x + danger.dangers[i].w) < spaceship.body[j].x){
-                    if ((danger.dangers[i].y + danger.dangers[i].h) > spaceship.body[j].y){
+                if ((danger.dangers[i].x + danger.dangers[i].w) > spaceship.body[j].x && danger.dangers[i].x < spaceship.body[j].x){
+                    if ((danger.dangers[i].y + danger.dangers[i].h) > spaceship.body[j].y && danger.dangers[i].y < spaceship.body[j].y){
                          lost = true;
                      }
                 }
